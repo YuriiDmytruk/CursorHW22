@@ -9,6 +9,7 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+  <h1>Home</h1>
     <div>
       <Routes>
         <Route path="CursorHW22/home" element={<Home />} />
