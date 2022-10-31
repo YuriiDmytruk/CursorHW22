@@ -11,9 +11,9 @@ root.render(
   <BrowserRouter>
     <div>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/registration" element={<SignUp />} />
-        <Route path="/" element={<SignIn />} />
+        <Route path="CursorHW22/home" element={<Home />} />
+        <Route path="CursorHW22/registration" element={<SignUp />} />
+        <Route path="CursorHW22/" element={<SignIn />} />
       </Routes>
     </div>
   </BrowserRouter>

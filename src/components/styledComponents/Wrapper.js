@@ -6,8 +6,6 @@ const Wrapper = styled.div`
 
   max-width: 500px;
 
-  font-family: 'Roboto', sans-serif;
-
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 25px;
