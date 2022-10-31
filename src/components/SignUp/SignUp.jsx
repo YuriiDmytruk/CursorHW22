@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {NavLink} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Input from "../styledComponents/Input.js";
 import Wrapper from "../styledComponents/Wrapper.js";
@@ -17,6 +18,7 @@ import {
 
 
 function SignUp() {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -115,11 +117,13 @@ function SignUp() {
           </label>
         </div>
 
-        <Button onClick={() => register(state)}>SIGN UP</Button>
+        <Button onClick={() => {if(register(state)){
+          navigate("CursorHW22/");
+        }}}>SIGN UP</Button>
 
         <div style={{ height: "40px" }}>
           <SplitedWrapper float="right">
-            <NavLink className="link" to="/">Already have an account? Sign in</NavLink>
+            <NavLink className="link" to="CursorHW22/">Already have an account? Sign in</NavLink>
           </SplitedWrapper>
         </div>
       </Wrapper>
@@ -130,27 +134,27 @@ function SignUp() {
 function register(state) {
   if (!validateName(state.firstName)) {
     alert("Enter your first name");
-    return;
+    return false;
   }
   if (!validateName(state.lastName)) {
     alert("Enter your last name");
-    return;
+    return false;
   }
   if (!validateName(state.email)) {
     alert("Wrong email");
-    return;
+    return false;
   }
   if (!isEmailUnique(state.email)) {
     alert(
       "This email is alredy exist"
     );
-    return;
+    return false;
   }
   if (!validateName(state.password)) {
     alert(
       "Password must contain Upper and Lower case letters and 8 characters"
     );
-    return;
+    return false;
   }
 
   let userList = JSON.parse(localStorage.getItem("userList"));
@@ -169,6 +173,8 @@ function register(state) {
   userList.push(newUser);
 
   localStorage.setItem("userList", JSON.stringify(userList));
+
+  return true;
 }
 
 export default SignUp;
