@@ -77,7 +77,7 @@ function SignIn() {
         <Button
           onClick={() => {
             if (signIn(state)) {
-              navigate("CursorHW22/home");
+              navigate("/home");
             }
           }}
         >
@@ -91,7 +91,7 @@ function SignIn() {
             </a>
           </SplitedWrapper>
           <SplitedWrapper float="right">
-            <NavLink className="link" to="CursorHW22/registration">
+            <NavLink className="link" to="/registration">
               Don't have an account? Sign Up
             </NavLink>
           </SplitedWrapper>
