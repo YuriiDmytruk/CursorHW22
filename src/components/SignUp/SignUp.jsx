@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import Input from "../styledComponents/Input.js";
@@ -15,7 +15,6 @@ import {
   validatePassword,
   isEmailUnique,
 } from "../../scripts/validator.js";
-
 
 function SignUp() {
   const navigate = useNavigate();
@@ -79,9 +78,7 @@ function SignUp() {
               email: e.target.value,
             }))
           }
-          isValid={
-            validateEmail(state.email) ? isEmailUnique(state.email) : false
-          }
+          isValid={validateEmail(state.email)}
         />
         <Input
           type="password"
@@ -117,13 +114,21 @@ function SignUp() {
           </label>
         </div>
 
-        <Button onClick={() => {if(register(state)){
-          navigate("/signin");
-        }}}>SIGN UP</Button>
+        <Button
+          onClick={() => {
+            if (register(state)) {
+              navigate("/signin");
+            }
+          }}
+        >
+          SIGN UP
+        </Button>
 
         <div style={{ height: "40px" }}>
           <SplitedWrapper float="right">
-            <NavLink className="link" to="/signin">Already have an account? Sign in</NavLink>
+            <NavLink className="link" to="/signin">
+              Already have an account? Sign in
+            </NavLink>
           </SplitedWrapper>
         </div>
       </Wrapper>
@@ -134,27 +139,25 @@ function SignUp() {
 function register(state) {
   if (!validateName(state.firstName)) {
     alert("Enter your first name");
-    return false;
+    return;
   }
   if (!validateName(state.lastName)) {
     alert("Enter your last name");
-    return false;
+    return;
   }
   if (!validateName(state.email)) {
     alert("Wrong email");
-    return false;
+    return;
   }
   if (!isEmailUnique(state.email)) {
-    alert(
-      "This email is alredy exist"
-    );
-    return false;
+    alert("This email is alredy exist");
+    return;
   }
   if (!validateName(state.password)) {
     alert(
       "Password must contain Upper and Lower case letters and 8 characters"
     );
-    return false;
+    return;
   }
 
   let userList = JSON.parse(localStorage.getItem("userList"));
@@ -173,8 +176,6 @@ function register(state) {
   userList.push(newUser);
 
   localStorage.setItem("userList", JSON.stringify(userList));
-
-  return true;
 }
 
 export default SignUp;
