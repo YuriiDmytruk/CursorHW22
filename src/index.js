@@ -13,7 +13,7 @@ root.render(
         <Route path="/home" element={<Home />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/" element={<SignIn />} />
+        <Route path="CursorHW22/" element={<SignIn />} />
       </Routes>
   </BrowserRouter>
 );
