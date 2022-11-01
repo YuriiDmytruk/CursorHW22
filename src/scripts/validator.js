@@ -25,6 +25,6 @@ export function isEmailUnique(email) {
     return !Boolean(found);
   } catch (error) {
     console.log(error);
-    return false;
+    return true;
   }
 }
