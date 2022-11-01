@@ -9,16 +9,16 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
-    <NavLink className="link" to="/signin">
-      SignIn
-    </NavLink>
+    <a href="/signin">SignIn</a>
     <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/registration" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="*" element={<SignIn />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/registration" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="*" element={<SignIn />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   </div>
 );
