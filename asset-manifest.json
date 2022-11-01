@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/CursorHW22/static/js/main.aecef7e0.js",
+    "main.js": "/CursorHW22/static/js/main.de2550be.js",
     "index.html": "/CursorHW22/index.html",
-    "main.aecef7e0.js.map": "/CursorHW22/static/js/main.aecef7e0.js.map"
+    "main.de2550be.js.map": "/CursorHW22/static/js/main.de2550be.js.map"
   },
   "entrypoints": [
-    "static/js/main.aecef7e0.js"
+    "static/js/main.de2550be.js"
   ]
 }
