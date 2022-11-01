@@ -14,8 +14,9 @@ root.render(
         <Route path="/home" element={<Home />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="*" element={<Navigate to="/signin" />} />
+        <Route path="/" element={<Navigate to="/signin" replace={true}/>} />
       </Routes>
     </div>
   </BrowserRouter>
 );
+
