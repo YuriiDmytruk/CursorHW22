@@ -8,16 +8,22 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div>
-    <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/registration" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/" element={<Navigate to="/signin" replace={true} />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  </div>
+  <BrowserRouter>
+    <div>
+      <Routes>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/registration">
+          <SignUp />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
+        <Route path="*">
+          <Navigate to="/signin" replace={true} />
+        </Route>
+      </Routes>
+    </div>
+  </BrowserRouter>
 );
