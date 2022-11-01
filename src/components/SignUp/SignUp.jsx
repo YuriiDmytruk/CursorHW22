@@ -139,25 +139,25 @@ function SignUp() {
 function register(state) {
   if (!validateName(state.firstName)) {
     alert("Enter your first name");
-    return;
+    return false;
   }
   if (!validateName(state.lastName)) {
     alert("Enter your last name");
-    return;
+    return false;
   }
   if (!validateName(state.email)) {
     alert("Wrong email");
-    return;
+    return false;
   }
   if (!isEmailUnique(state.email)) {
     alert("This email is alredy exist");
-    return;
+    return false;
   }
   if (!validateName(state.password)) {
     alert(
       "Password must contain Upper and Lower case letters and 8 characters"
     );
-    return;
+    return false;
   }
 
   let userList = JSON.parse(localStorage.getItem("userList"));
@@ -176,6 +176,7 @@ function register(state) {
   userList.push(newUser);
 
   localStorage.setItem("userList", JSON.stringify(userList));
+  return true;
 }
 
 export default SignUp;
