@@ -118,12 +118,12 @@ function SignUp() {
         </div>
 
         <Button onClick={() => {if(register(state)){
-          navigate("/");
+          navigate("/signin");
         }}}>SIGN UP</Button>
 
         <div style={{ height: "40px" }}>
           <SplitedWrapper float="right">
-            <NavLink className="link" to="/">Already have an account? Sign in</NavLink>
+            <NavLink className="link" to="/signin">Already have an account? Sign in</NavLink>
           </SplitedWrapper>
         </div>
       </Wrapper>

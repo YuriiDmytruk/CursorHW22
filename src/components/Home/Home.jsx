@@ -16,14 +16,14 @@ function Home() {
         <h1>Welcome back</h1>
         <h1>{user.firstName} {user.lastName}</h1>
         <p>{user.email}</p>
-        <Button onClick={() => {logOut(); navigate("/")}}>Log out</Button>
+        <Button onClick={() => {logOut(); navigate("/signin")}}>Log out</Button>
       </Wrapper>
     );
   } else {
     return (
       <Wrapper>
         <h1>Please Sign in</h1>
-        <Button onClick={() => {navigate("/")}}>Move to Sign in form</Button>
+        <Button onClick={() => {navigate("/signin")}}>Move to Sign in form</Button>
       </Wrapper>
     );
   }
