@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import { Route, BrowserRouter, Routes, NavLink } from "react-router-dom";
 
 import SignUp from "./components/SignUp/SignUp.jsx";
 import Home from "./components/Home/Home.jsx";
@@ -11,18 +11,10 @@ root.render(
   <BrowserRouter>
     <div>
       <Routes>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/registration">
-          <SignUp />
-        </Route>
-        <Route path="/signin">
-          <SignIn />
-        </Route>
-        <Route path="*">
-          <Navigate to="/signin" replace={true} />
-        </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/registration" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/" element={<NavLink className="link" to="/signin">SignIn</NavLink>} />
       </Routes>
     </div>
   </BrowserRouter>
