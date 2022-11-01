@@ -8,13 +8,17 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-  <NavLink className="link" to="/signin">SignIn</NavLink>
+  <div>
+    <NavLink className="link" to="/signin">
+      SignIn
+    </NavLink>
+    <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/registration" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="*" element={<SignIn />} />
       </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
+  </div>
 );
