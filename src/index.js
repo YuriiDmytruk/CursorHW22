@@ -9,6 +9,7 @@ import SignIn from "./components/SignIn/SignIn.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
+    <SignIn/>
     <BrowserRouter>
       <div>
         <Routes>
